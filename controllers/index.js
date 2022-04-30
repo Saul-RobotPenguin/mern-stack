@@ -54,9 +54,9 @@ const deleteReview = async (req, res) => {
     const { id } = req.params;
     const deleted = await Review.findByIdAndDelete(id);
     if (deleted) {
-      return res.status(200).send("Review has been Deleted");
+      return res.status(200).send("Item deleted");
     }
-    throw new Error("Review Not Found");
+    throw new Error("Item not found");
   } catch (error) {
     return res.status(500).send(error.message);
   }
